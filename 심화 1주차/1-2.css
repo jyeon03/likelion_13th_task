@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+}
+
+.container {
+  background-color: black;
+  color: white;
+  width: 500px;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  padding: 10px 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.feed-img {
+  width: 500px;
+  height: 400px;
+}
+
+.feed-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.insight {
+  color: rgb(47, 137, 217);
+}
+
+.icons {
+  display: flex;
+  padding: 15px 10px;
+  justify-content: space-between;
+}
+
+.icons-left {
+  display: flex;
+  gap: 15px;
+}
+
+.comments {
+  display: flex;
+  padding: 0 10px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.comment {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.feed-date {
+  display: flex;
+  padding: 10px;
+  color: gray;
+}
+
+.line {
+  display: flex;
+  justify-content: center;
+}
+
+hr {
+  border: 0.1px solid rgba(255, 255, 255, 0.1);
+  width: 95%;
+}
+
