@@ -1,0 +1,106 @@
+<!--
+최상단 네비게이션을 구현한 topnav 입니다.
+3개의 section으로 구분되어있습니다.
+-->
+
+<!-- 스타일 css import -->
+{% load static %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/shared/topnav.css'%}"
+/>
+
+<div class="screen">
+  <div class="topnav">
+    <!-- 로그인 회원가입 고객센터 -->
+    <section class="nav-1 text-font2">
+      <div class="div">
+        <!-- 로그인을 한 경우 -->
+        {% if user.is_authenticated %}
+        <p class="Caption">{{user.username}}님 안녕하세요!</p>
+        <a class="Caption" href="/accounts/logout/">로그아웃</a>
+
+        <!-- 로그인을 하지 않은 경우 -->
+        {% else %}
+        <a class="Caption" href="/accounts/signup/">회원가입</a>
+        <a class="Caption" href="/accounts/login/">로그인</a>
+        {% endif %}
+
+        <div class="Caption">고객센터</div>
+      </div>
+    </section>
+
+    <!-- 로고 서치바 아이콘들 -->
+    <div class="search">
+      <a class="logo" href="/">
+        <img src="{% static 'assets/logo.svg' %}" />
+        <div class="B1-bold text-main">마켓컬리</div>
+      </a>
+
+      <form class="search-bar">
+        <input class="B2" placeholder="검색어를 입력해주세요" />
+        <img
+          class="icon-24 icon-main"
+          src="{% static 'assets/icons/search.svg' %}"
+        />
+      </form>
+
+      <div class="iconlist">
+        <a>
+          <img class="icon-24" src="{% static 'assets/icons/location.svg' %}" />
+        </a>
+        <a>
+          <img class="icon-24" src="{% static 'assets/icons/heart.svg' %}" />
+        </a>
+        <a>
+          <img class="icon-24" src="{% static 'assets/icons/cart.svg' %}" />
+        </a>
+      </div>
+    </div>
+
+    <!-- 카테고리들 -->
+    <div class="nav-2 text-font1">
+      <button class="category">
+        <img class="icon-16" src="{% static 'assets/icons/col-3.svg' %}" />
+        <div class="Btn-nav">카테고리</div>
+      </button>
+
+      <div class="nav-menu-list Btn-nav" id="nav-menu-list">
+        <a href="/"> 신상품 </a>
+        <a>베스트</a>
+        <a>알뜰쇼핑</a>
+        <a>특가/혜택</a>
+      </div>
+
+      <a class="right-button B2">
+        <div class="text-main">샛별·하루</div>
+        <div class="text-font3">배송안내</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const currentPath = window.location.pathname;
+
+    const navMenu = document.getElementById("nav-menu-list");
+    const navMenuList = navMenu.children;
+
+    Array.from(navMenuList).forEach(function (menu) {
+      if (menu.href == "http://127.0.0.1:8000" + currentPath) {
+        menu.style.color = "#5e0080";
+      }
+    });
+
+    const searchBarInput = document.querySelector(".search-bar > input");
+    searchBarInput.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        const searchTerm = searchBarInput.value;
+        alert("검색어: " + searchTerm);
+      }
+    });
+  });
+</script>

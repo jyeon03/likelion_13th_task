@@ -1,0 +1,117 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<!-- css 파일 -->
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/main/main_page.css'%}"
+/>
+
+<!-- 코드 작성시, 아래 부분(script 태그 이전)은 전체 삭제하고 작성하세요 -->
+
+<!----------------tip!---------------->
+<!-- 상품 데이터베이스는 프로젝트에 넣어뒀어요 -->
+<!-- 아래와 같은 형식으로 for문을 사용하여 작성하세요 -->
+
+<!-- 데이터 사용 예시 -->
+<!-- <div style="display: flex">
+  {% for product in products %}
+  <a href="product/{{product.id}}">
+    <img src="{{product.image_url}}" style="width: 100px" />
+    <p>{{product}}</p>
+    <p>{{product.description}}</p>
+    <p>{{product.origin_price}}원</p>
+    <p>{{product.discount_rate}}%</p>
+    <p>{{product.discount_price}}원</p>
+  </a>
+  {% endfor %}
+</div> -->
+<!-- 데이터 사용 예시 -->
+<div class="container">
+  <div class="menu">
+    <div class="menu-page active"><a href="/">인기신상랭킹</a></div>
+    <div class="menu-page"><a href="#">입점특가</a></div>
+    <div class="menu-page"><a href="#">간편한끼</a></div>
+    <div class="menu-page"><a href="#">요즘간식</a></div>
+    <div class="menu-page"><a href="#">주방·리빙</a></div>
+    <div class="menu-page"><a href="#">뷰티</a></div>
+    <div class="menu-page"><a href="#">패션·잡화</a></div>
+  </div>
+
+  <div class="section">
+    <div class="filter">
+      <div class="filter-bar">
+        <p class="filter-title">필터</p>
+        <div class="filter-reset">
+          <img
+            class="reset-img"
+            src="/static/assets/icons/reset.svg"
+            alt="reset image"
+          />
+          <p class="reset-text">초기화</p>
+        </div>
+      </div>
+      <div class="category-box">
+        <div class="category-bar">
+          <p class="category-title">카테고리</p>
+          <img
+            class="category-img"
+            src="/static/assets/icons/up.svg"
+            alt="arrowup image"
+          />
+        </div>
+        <div class="categories">
+          <div class="category">
+            <input class="category-input" type="checkbox" />
+            <p class="category-item">스킨케어·메이크업</p>
+            <p class="category-count">68</p>
+          </div>
+          <div class="category">
+            <input class="category-input" type="checkbox" />
+            <p class="category-item">럭셔리뷰티</p>
+            <p class="category-count">68</p>
+          </div>
+          <div class="category">
+            <input class="category-input" type="checkbox" />
+            <p class="category-item">간식·과자·떡</p>
+            <p class="category-count">68</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="products">
+      <div class="product-bar">
+        <p class="product-count">총 508건</p>
+        <div class="product-filter">
+          <p class="product-filter-title">추천순</p>
+          <img class="product-line" src="/static/assets/icons/line.svg" alt="line" />
+          <p class="product-filter-title">산성품순</p>
+          <img class="product-line" src="/static/assets/icons/line.svg" alt="line" />
+          <p class="product-filter-title">판매량순</p>
+          <img class="product-line" src="/static/assets/icons/line.svg" alt="line" />
+          <p class="product-filter-title">혜택순</p>
+          <img class="product-line" src="/static/assets/icons/line.svg" alt="line" />
+          <p class="product-filter-title">낮은 가격순</p>
+          <img class="product-line" src="/static/assets/icons/line.svg" alt="line" />
+          <p class="product-filter-title">높은 가격순</p>
+        </div>
+      </div>
+      <div style="display: grid">
+        {% for product in products %}
+        <a href="product/{{product.id}}">
+          <img src="{{product.image_url}}" style="width: 100px" />
+          <p>{{product}}</p>
+          <p>{{product.description}}</p>
+          <p>{{product.origin_price}}원</p>
+          <p>{{product.discount_rate}}%</p>
+          <p>{{product.discount_price}}원</p>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- js 파일 -->
+<script src="{% static 'js/main/main_page.js'%}"></script>
+{% endblock %}
