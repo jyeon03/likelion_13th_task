@@ -1,0 +1,22 @@
+@keyframes bounceUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.box:nth-child(2) {
+  animation: bounceUp 1s ease-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+.box:nth-child(2):hover {
+  transform: scale(1.05) rotate(3deg);
+}
