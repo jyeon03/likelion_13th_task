@@ -37,6 +37,7 @@
 .section {
   display: flex;
   gap: 47px;
+  margin-bottom: 100px;
 }
 
 .filter {
