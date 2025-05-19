@@ -1,0 +1,157 @@
+/* product detail page - CSS */
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.product-img {
+  width: 430px;
+  height: 550px;
+  border-radius: 8px;
+}
+
+.card-box {
+  display: flex;
+  flex-direction: column;
+  gap: 101px;
+  height: 550px;
+  justify-content: space-between;
+}
+
+.tag {
+  color: #999999;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.description {
+  color: #333333;
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.prices {
+  padding: 20px 0;
+  display: flex;
+  gap: 8px;
+}
+
+.discount-rate {
+  color: #fa622f;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.discount-price {
+  color: #333333;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.content {
+  padding: 20px 0;
+  border-top: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+  display: flex;
+}
+
+.text {
+  color: #999999;
+  font-size: 14px;
+  font-weight: 600;
+  width: 128px;
+}
+
+.notice {
+  width: 337px;
+  color: #333333;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.quantity {
+  padding: 10px 10px 15px 19px;
+  width: 442px;
+  border: 1px solid #e2e2e2;
+}
+
+.name {
+  color: #999999;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.login-btn {
+  width: 570px;
+  height: 56px;
+  background-color: #5e0080;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.total-prices {
+  display: flex;
+  gap: 8px;
+  align-items: end;
+  justify-content: flex-end;
+}
+
+.total-price {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.pay {
+  color: #333333;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.quantity-controls {
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+  padding: 4px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.minus-btn,
+.quantity-count,
+.plus-btn {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.quantity-count {
+  width: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.minus-btn,
+.plus-btn {
+  width: 20px;
+  height: 20px;
+}

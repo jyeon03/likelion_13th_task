@@ -1,0 +1,119 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<!-- css 파일 -->
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/main/main_page.css'%}"
+/>
+
+<div class="container">
+  <div class="menu">
+    <div class="menu-page active"><a href="/">인기신상랭킹</a></div>
+    <div class="menu-page"><a href="#">입점특가</a></div>
+    <div class="menu-page"><a href="#">간편한끼</a></div>
+    <div class="menu-page"><a href="#">요즘간식</a></div>
+    <div class="menu-page"><a href="#">주방·리빙</a></div>
+    <div class="menu-page"><a href="#">뷰티</a></div>
+    <div class="menu-page"><a href="#">패션·잡화</a></div>
+  </div>
+
+  <div class="section">
+    <div class="filter">
+      <div class="filter-bar">
+        <p class="text">필터</p>
+        <div class="filter-reset">
+          <img
+            class="reset-img"
+            src="/static/assets/icons/reset.svg"
+            alt="reset image"
+          />
+          <p class="reset-text">초기화</p>
+        </div>
+      </div>
+      <div class="category-box">
+        <div class="category-bar">
+          <p class="text">카테고리</p>
+          <img
+            class="category-img"
+            src="/static/assets/icons/up.svg"
+            alt="arrowup image"
+          />
+        </div>
+        <div id="categories"></div>
+      </div>
+    </div>
+
+    <div id="products">
+      <div class="product-bar">
+        <p class="text">총 0건</p>
+        <div class="product-filter">
+          <p class="text active">추천순</p>
+          <img
+            class="product-line"
+            src="/static/assets/icons/line.svg"
+            alt="line"
+          />
+          <p class="text">산성품순</p>
+          <img
+            class="product-line"
+            src="/static/assets/icons/line.svg"
+            alt="line"
+          />
+          <p class="text">판매량순</p>
+          <img
+            class="product-line"
+            src="/static/assets/icons/line.svg"
+            alt="line"
+          />
+          <p class="text">혜택순</p>
+          <img
+            class="product-line"
+            src="/static/assets/icons/line.svg"
+            alt="line"
+          />
+          <p class="text">낮은 가격순</p>
+          <img
+            class="product-line"
+            src="/static/assets/icons/line.svg"
+            alt="line"
+          />
+          <p class="text">높은 가격순</p>
+        </div>
+      </div>
+
+      <div id="product">
+        {% for product in products %}
+        <a href="product/{{product.id}}">
+          <img class="product-img" src="/static/assets/icons/productImg.png" />
+          <div class="product-cart">
+            <img
+              class="product-cart-img"
+              src="/static/assets/icons/cart.svg"
+              alt="cart imgage"
+            />
+            <p class="product-cart-text">담기</p>
+          </div>
+          <div class="product-info">
+            <p class="product-tag">샛별배송</p>
+            <p class="product-name">{{product}}</p>
+            <p class="product-description">{{product.description}}</p>
+            <div class="product-price">
+              <p class="product-origin-price">{{product.origin_price}}원</p>
+              <div class="product-discount">
+                <p class="product-discount-rate">{{product.discount_rate}}%</p>
+                <p class="product-discount-price">
+                  {{product.discount_price}}원
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- js 파일 -->
+<script src="{% static 'js/main/main_page.js'%}"></script>
+{% endblock %}

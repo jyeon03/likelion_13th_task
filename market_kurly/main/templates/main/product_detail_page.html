@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% load humanize %} {% block content %} {% load static %}
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/main/product_detail_page.css'%}"
+/>
+
+<!-- 코드 작성시, 아래 부분(endblock 이전)은 전체 삭제하고 작성하세요 -->
+
+<!----------------tip!---------------->
+<!-- 상품 데이터베이스는 프로젝트에 넣어뒀어요 -->
+<!-- 아래와 같은 형식으로 사용하세요 -->
+
+<!-- 데이터 사용 예시 -->
+<div class="container">
+  <div class="card">
+    <img class="product-img" src="/static/assets/icons/productImg.png" />
+    <div class="card-box">
+      <div class="card-info">
+        <p class="tag">샛별배송</p>
+        <p class="description">{{product.description}}</p>
+        <div class="prices">
+          <p class="discount-rate">{{product.discount_rate}}%</p>
+          <p class="discount-price">{{product.discount_price|intcomma}} 원</p>
+        </div>
+        <div class="content">
+          <p class="text">안내 사항</p>
+          <p class="notice">{{product.notice}}</p>
+        </div>
+        <div class="content">
+          <p class="text">상품 선택</p>
+          <div class="quantity">
+            <p class="name">{{product.name}}</p>
+            <div id="quantity-controls"></div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="total-prices">
+          <p class="total-price">총 상품 금액:</p>
+          <p class="pay">{{ product.discount_price|intcomma }} 원</p>
+        </div>
+        <button type="button" class="login-btn">로그인</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 데이터 사용 예시 -->
+
+<script src="{% static 'js/main/product_detail_page.js'%}"></script>
+{% endblock %}

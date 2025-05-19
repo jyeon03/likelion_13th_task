@@ -1,0 +1,270 @@
+.screen {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  gap: 10px;
+
+  @media (max-width: 1050px) {
+    align-items: start;
+  }
+  @media (min-width: 1051px) {
+    align-items: center;
+  }
+}
+
+.topnav {
+  display: flex;
+  flex-direction: column;
+  width: 1050px;
+}
+
+/* 로그인 회원가입 */
+
+.topnav .nav-1 {
+  display: flex;
+  flex-direction: column;
+  width: 65.625rem; /* 1050px */
+  height: 2.25rem; /* 36px */
+  align-items: end;
+  justify-content: center;
+  gap: 0.625rem; /* 10px */
+}
+
+.topnav .div {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 1rem; /* 16px */
+  position: relative;
+  flex: 0 0 auto;
+}
+/* 로그인 회원가입 */
+
+/* 서치바 */
+.topnav .search {
+  display: flex;
+  width: 65.625rem; /* 1050px */
+  height: 3.9375rem; /* 63px */
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.topnav .search .logo {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem; /* 20px */
+}
+
+.topnav .search .logo > img {
+  width: 5.125rem; /* 82px */
+  height: 2.625rem; /* 42px */
+}
+
+.topnav .search .iconlist {
+  display: flex;
+  gap: 1.25rem; /* 20px */
+}
+
+.topnav .search .search-bar {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem; /* 20px */
+
+  width: 25rem; /* 400px */
+  height: 3rem; /* 48px */
+  padding: 0 0.875rem; /* 14px */
+
+  border-radius: 0.375rem; /* 6px */
+  border: 1px solid #5e0080;
+}
+
+.topnav .search .search-bar > input {
+  flex-grow: 1;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: #999;
+}
+/* 서치바 */
+
+/* 메뉴 네브바 */
+.topnav .nav-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  height: 3.4375rem; /* 55px */
+  position: relative;
+}
+
+.topnav .nav-2 .category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; /* 16px */
+}
+
+.topnav .nav-2 .nav-menu-list {
+  display: flex;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.topnav .nav-2 .nav-menu-list > a {
+  display: flex;
+  width: 9.375rem; /* 150px */
+  height: 2.3125rem; /* 37px */
+  justify-content: center;
+  padding: 1.125rem 0 0;
+}
+
+.topnav .nav-2 .right-button {
+  display: flex;
+  gap: 0.5rem; /* 8px */
+  padding: 0.375rem 1rem; /* 6px 16px */
+  border-radius: 2rem; /* 32px */
+  border: 1px solid #e2e2e2;
+}
+
+/* 폰트 설정 */
+.Btn-nav {
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25rem; /* 125% */
+  letter-spacing: -0.01875rem;
+}
+.Btn-sidenav {
+  font-family: Pretendard;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.0625rem; /* 121.429% */
+}
+
+.Btn {
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem; /* 150% */
+}
+
+.B1-bold {
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem; /* 150% */
+}
+.B1 {
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem; /* 150% */
+}
+.B2 {
+  font-family: Pretendard;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25rem; /* 142.857% */
+  letter-spacing: -0.0625rem;
+}
+.B2-bold {
+  font-family: Pretendard;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.25rem; /* 142.857% */
+  letter-spacing: -0.0625rem;
+}
+.H3 {
+  font-family: Pretendard;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25rem; /* 133.333% */
+}
+.Caption {
+  font-family: Pretendard;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1rem; /* 133.333% */
+}
+
+.H1 {
+  font-family: Pretendard;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2rem; /* 133.333% */
+  letter-spacing: -0.0625rem;
+}
+
+.H2 {
+  font-family: Pretendard;
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2rem; /* 114.286% */
+  letter-spacing: -0.0625rem;
+}
+
+/* 색상설정 */
+.bg-main {
+  background-color: #5e0080;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-main {
+  color: #5e0080;
+}
+
+.text-font1 {
+  color: #333333;
+}
+
+.text-font2 {
+  color: #999999;
+}
+.text-font3 {
+  color: #dddddd;
+}
+
+.icon-main {
+  filter: invert(10%) sepia(66%) saturate(6114%) hue-rotate(282deg)
+    brightness(84%) contrast(112%);
+}
+
+/* 아이콘 크기설정 */
+.icon-24 {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-16 {
+  width: 1rem;
+  height: 1rem;
+}
