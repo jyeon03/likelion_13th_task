@@ -215,6 +215,7 @@
   color: #333333;
   font-weight: bold;
 }
+
 #selected-categories {
   display: flex;
   padding: 20px 18px;
@@ -238,4 +239,20 @@
 .select-name {
   color: #5e0080;
   font-size: 14px;
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.2s ease;
+}
+
+.custom-checkbox.checked {
+  background-image: url("/static/assets/icons/done.svg");
 }
