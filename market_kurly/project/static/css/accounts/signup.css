@@ -1,1 +1,101 @@
 /* signup page - CSS */
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  gap: 32px;
+  width: 640px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.line {
+  width: 100%;
+  border: 1px solid black;
+}
+
+.signup-content {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signup-content2 {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.signup-label {
+  font-size: 14px;
+  font-weight: 600;
+  width: 150px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+}
+
+.text-input {
+  width: 450px;
+  height: 46px;
+  font-size: 14px;
+  color: #999999;
+  font-weight: 400;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding-left: 11px;
+}
+
+.pass-conditions {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #999999;
+}
+
+.line2 {
+  width: 100%;
+  border: 1px solid #e2e2e2;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.submit-btn {
+  width: 240px;
+  height: 56px;
+  border-radius: 4px;
+  background-color: #e2e2e2;
+  font-size: 16px;
+  font-weight: 500;
+  color: #999999;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#password-error {
+  color: #fa622f;
+  font-size: 12px;
+  font-weight: 400;
+  display: none;
+  margin-top: 8px;
+}

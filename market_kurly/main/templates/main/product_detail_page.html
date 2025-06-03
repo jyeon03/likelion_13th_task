@@ -49,4 +49,83 @@
 <!-- 데이터 사용 예시 -->
 
 <script src="{% static 'js/main/product_detail_page.js'%}"></script>
+<div class="screen">
+  <div
+    style="
+      width: 1050px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px 0px;
+    "
+  >
+    <!-- 여기에 후기를 작성하는 폼을 만들어주세요! -->
+
+    <form action="create_comment/" method="post">
+      {% csrf_token %}
+      <select id="star" name="star">
+        <option value="별점">별점</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <input
+        type="text"
+        id="comment"
+        name="content"
+        placeholder="댓글을 입력해주세요"
+        required
+      />
+      <button id="submit_button" type="submit" disabled>등록</button>
+    </form>
+
+    {% for comment in comments %}
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px 8px;
+        border-bottom: solid 1px #d9d9d9;
+      "
+    >
+      <div style="display: flex; justify-content: space-between">
+        <p>평점:{{comment.star}}</p>
+        <a href="{% url 'main:delete_comment' comment.id %}">삭제</a>
+      </div>
+      <p class="B1">{{comment.content}}</p>
+    </div>
+    {% endfor%}
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const comment = document.getElementById("comment");
+    const submit = document.getElementById("submit_button");
+    const star = document.getElementById("star");
+
+    comment.addEventListener("input", (event) => {
+      if (comment.value.trim() === "" || star.value=="별점") {
+        submit.disabled = true;
+        submit.style.backgroundColor = "#5e0080";
+      } else {
+        submit.disabled = false;
+        submit.style.backgroundColor = "#dddddd";
+      }
+    });
+    
+    star.addEventListener("change", (event) => {
+      if (comment.value.trim() === "" || star.value=="별점") {
+
+        submit.disabled = true;
+        submit.style.backgroundColor = "#5e0080";
+      } else {
+        submit.disabled = false;
+        submit.style.backgroundColor = "#dddddd";
+      }
+    });
+  });
+</script>
 {% endblock %}
